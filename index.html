@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simple video tools and official download guidance for content you own or are authorized to use.">
+  <title>ClipSave — Simple Video Tools</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1020; --panel:#141c31; --muted:#a8b3ca; --accent:#5b8cff; --border:#293651; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; background:linear-gradient(180deg,#0b1020,#101a30); color:#f5f7fb; line-height:1.5; }
+    .wrap { width:min(960px,92%); margin:auto; }
+    header { padding:24px 0; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .logo { font-weight:800; font-size:1.35rem; letter-spacing:.3px; }
+    .logo span { color:var(--accent); }
+    nav a { color:#d9e3f7; margin-left:16px; text-decoration:none; font-size:.95rem; }
+    .hero { text-align:center; padding:50px 0 34px; }
+    .eyebrow { color:#91b2ff; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; font-size:.78rem; }
+    h1 { font-size:clamp(2rem,6vw,3.6rem); line-height:1.08; margin:14px 0; }
+    .intro { max-width:650px; margin:0 auto; color:var(--muted); }
+    .panel { max-width:720px; margin:28px auto 0; padding:22px; background:rgba(20,28,49,.95); border:1px solid var(--border); border-radius:18px; text-align:left; }
+    label { display:block; font-weight:700; margin-bottom:9px; }
+    .urlrow { display:flex; gap:10px; }
+    input { min-width:0; flex:1; padding:14px 15px; border-radius:10px; border:1px solid #3b4966; background:#0b1223; color:white; font-size:1rem; }
+    button { padding:14px 18px; border:0; border-radius:10px; background:var(--accent); color:white; font-weight:700; cursor:pointer; font-size:1rem; }
+    button:hover { filter:brightness(1.08); }
+    #message { margin:12px 0 0; color:#c9d7f2; min-height:24px; }
+    .notice { color:var(--muted); font-size:.88rem; margin-top:14px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:30px 0; }
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:15px; padding:20px; }
+    .card h2 { font-size:1.1rem; margin:8px 0; }
+    .card p { color:var(--muted); font-size:.94rem; }
+    .icon { font-size:1.6rem; }
+    section.info { margin:34px 0; }
+    section.info h2 { font-size:1.5rem; }
+    section.info p, section.info li { color:var(--muted); }
+    footer { border-top:1px solid var(--border); margin-top:40px; padding:25px 0 35px; color:var(--muted); font-size:.9rem; }
+    footer a { color:#cbd8f5; margin-right:14px; }
+    @media(max-width:650px) { header { align-items:flex-start; flex-direction:column; } nav a { margin:0 14px 0 0; } .urlrow { flex-direction:column; } .grid { grid-template-columns:1fr; } .hero { padding-top:30px; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="logo">Clip<span>Save</span></div>
+    <nav aria-label="Main navigation">
+      <a href="#tools">Tools</a><a href="#how">How it works</a><a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Simple video tools</div>
+      <h1>Your video links,<br>made easier.</h1>
+      <p class="intro">A simple place to check video links and find official options for saving content you own or are authorized to download.</p>
+      <div class="panel">
+        <label for="videoUrl">Paste a video URL</label>
+        <div class="urlrow">
+          <input id="videoUrl" type="url" placeholder="https://www.youtube.com/... or https://www.instagram.com/..." autocomplete="url">
+          <button id="checkBtn" type="button">Check link</button>
+        </div>
+        <p id="message" role="status" aria-live="polite">Paste a YouTube or Instagram link to check its format.</p>
+        <p class="notice">This starter page does not fetch or download video files. Use platform-provided options and respect copyright and platform terms.</p>
+      </div>
+    </section>
+
+    <section id="tools" class="grid" aria-label="Video tool options">
+      <article class="card"><div class="icon">▶️</div><h2>YouTube</h2><p>Get help finding official options for your own uploads and content you are permitted to save.</p><a href="https://support.google.com/youtube/" target="_blank" rel="noopener noreferrer">YouTube Help ↗</a></article>
+      <article class="card"><div class="icon">📸</div><h2>Instagram</h2><p>Review Instagram's official tools and options for your own content.</p><a href="https://help.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram Help ↗</a></article>
+      <article class="card"><div class="icon">🛠️</div><h2>Video tools</h2><p>More tools—such as video compression or conversion—can be added in a later version.</p><a href="#how">See how it works ↓</a></article>
+    </section>
+
+    <section id="how" class="info">
+      <h2>How it works</h2>
+      <ol>
+        <li>Paste a video page URL into the field.</li>
+        <li>Choose the appropriate platform help link.</li>
+        <li>Use only downloads that the platform permits and that you have rights to save.</li>
+      </ol>
+    </section>
+
+    <section id="about" class="info">
+      <h2>About ClipSave</h2>
+      <p>ClipSave is an independent starter project for simple, responsible video utilities. It is not affiliated with YouTube, Instagram, Google, or Meta.</p>
+      <p>Contact: replace-this-with-your-email@example.com</p>
+    </section>
+
+    <section class="info">
+      <h2>Privacy</h2>
+      <p>This demo runs in your browser and does not send the entered URL to a server. Before adding analytics, ads, or a backend, publish a privacy policy that accurately describes what your website collects and how it is used.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> ClipSave. Use content responsibly.</p>
+      <a href="#about">About</a><a href="#how">How it works</a><a href="#about">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    const urlInput = document.getElementById('videoUrl');
+    const message = document.getElementById('message');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('checkBtn').addEventListener('click', () => {
+      const raw = urlInput.value.trim();
+      if (!raw) { message.textContent = 'Please paste a URL first.'; return; }
+      let parsed;
+      try { parsed = new URL(raw); } catch { message.textContent = 'That does not look like a valid URL. Include https://'; return; }
+      if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') {
+        message.textContent = 'Please enter a web URL beginning with http:// or https://'; return;
+      }
+      const host = parsed.hostname.toLowerCase().replace(/^www\./, '');
+      if (host === 'youtube.com' || host.endsWith('.youtube.com') || host === 'youtu.be') {
+        message.textContent = 'YouTube link format detected. This demo cannot download the file; use YouTube’s official options for content you own or are permitted to save.';
+      } else if (host === 'instagram.com' || host.endsWith('.instagram.com')) {
+        message.textContent = 'Instagram link format detected. This demo cannot download the file; check Instagram’s official options for your own content.';
+      } else {
+        message.textContent = 'URL format looks valid, but this starter only recognises YouTube and Instagram links.';
+      }
+    });
+  </script>
+</body>
+</html>
